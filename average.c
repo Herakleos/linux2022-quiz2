@@ -1,18 +1,6 @@
 #include <stdio.h>
 #include <stdint.h>
 
-uint32_t average(uint32_t a, uint32_t b);
-uint32_t average2(uint32_t a, uint32_t b);
-
-int main()
-{
-    int a = 255, b = 675;
-    // EXP1
-    printf("%u\n", average(a, b));
-    // EXP2, EXP3
-    printf("%u\n", average2(a, b));
-    return 0;
-}
 
 /**
  *

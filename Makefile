@@ -2,7 +2,7 @@ CC = gcc
 
 # g: debug info compiled
 # Wall: more warning message while compile
-CFLAGS = -O1 -g -Wall
+CFLAGS = -O1 -g -Wall -Werror
 
 # Control the build verbosity
 ifeq ("$(VERBOSE)","1")
@@ -13,14 +13,8 @@ else
     VECHO = @printf
 endif
 
-# Enable sanitizer(s) or not
-ifeq ("$(SANITIZER)","1")
-    # https://github.com/google/sanitizers/wiki/AddressSanitizerFlags
-    CFLAGS += -fsanitize=address -fno-omit-frame-pointer -fno-common
-    LDFLAGS += -fsanitize=address
-endif
-
-OBJS := average.o
+OBJS := test.o \
+        average.o min_max.o
 
 deps := $(OBJS:%.o=.%.o.d)
 
@@ -32,7 +26,7 @@ all: test
 
 test: $(OBJS)
 	$(VECHO) "  LD\t$@\n"
-	$(Q)$(CC) $(LDFLAGS) -o $@ $^ -lm
+	$(Q)$(CC) -o $@ $^ -lm
 
 clean:
 	@echo "Clean..."
