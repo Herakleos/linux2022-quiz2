@@ -3,6 +3,7 @@ Linux Kernel Internals - 2022 (Spring) Homework 2
 
 ## File sturcture
 * *.c
+* *.h
 * Makefile
 * .gitignore
 * .clang-format
