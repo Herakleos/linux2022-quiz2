@@ -6,6 +6,7 @@
 
 // example code
 int32_t min(int32_t a, int32_t b);
+uint32_t min2(uint32_t a, uint32_t b);
 
 // EXP4, EXP5
 uint32_t max(uint32_t a, uint32_t b);
