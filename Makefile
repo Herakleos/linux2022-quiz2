@@ -14,8 +14,8 @@ else
 endif
 
 OBJS := test.o \
-        average.o min_max.o \
-		gcd.o
+        average.o min_max.o gcd.o \
+		bitset.o
 
 deps := $(OBJS:%.o=.%.o.d)
 
